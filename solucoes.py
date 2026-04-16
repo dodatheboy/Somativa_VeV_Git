@@ -8,8 +8,14 @@ def sao_anagrama(string1, string2):
         return False
 
 def cifra_de_cesar(texto, deslocamento):
-    # todo : implementar a logica
-    pass
+    r = []
+    for c in texto:
+        if c.isalpha():
+            b = ord('A') if c.isupper() else ord('a')
+            r.append(chr((ord(c) - b + deslocamento) % 26 + b))
+        else:
+            r.append(c)
+    return ''.join(r)
 
 def encontrar_maior_palavra(frase):
     frase = [frase.split()]
